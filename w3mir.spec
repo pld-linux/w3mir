@@ -34,10 +34,6 @@ you like. They don't even have to be related.
 W3mir supports HTML4, and has partial support for CSS, Java, ActiveX
 and Adobe Acrobat (PDF) files.
 
-%changelog
-* Thu Jul 23 1998 Arkadiusz Mi¶kiewicz <misiek@misiek.eu.org>
-- initial RPM release
-
 %prep
 %setup -n w3mir-1.0.3
 
