@@ -1,3 +1,4 @@
+%include	/usr/lib/rpm/macros.perl
 Summary:	A command-line client to download WWW documents.
 Name:		w3mir
 Version:	1.0.8
