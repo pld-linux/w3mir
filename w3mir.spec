@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	A command-line client to download WWW documents
-Summary(pl):	Klient command-line do ¶ci±gania serwisów WWW
+Summary(pl):	Program do ¶ci±gania serwisów WWW uruchamiany z linii komend
 Name:		w3mir
 Version:	1.0.10
 Release:	2
