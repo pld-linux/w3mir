@@ -3,14 +3,14 @@ Summary:	A command-line client to download WWW documents
 Summary(pl):	Program do ¶ci±gania serwisów WWW uruchamiany z linii poleceñ
 Name:		w3mir
 Version:	1.0.10
-Release:	2
+Release:	3
 License:	Artistic
 Vendor:		<janl@math.uio.no>
 Group:		Applications/Networking
 Source0:	http://langfeldt.net/w3mir/%{name}-%{version}.tar.gz
 # Source0-md5:	b2d5d77461dea8d546b6c8e4f7b92cca
 URL:		http://langfeldt.net/w3mir/
-BuildRequires:	perl-devel >= 5.8.0
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-libwww
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
