@@ -1,0 +1,64 @@
+--- w3mir-1.0.10/w3mir.PL~	2001-02-04 22:21:47.000000000 +0100
++++ w3mir-1.0.10/w3mir.PL	2004-08-21 13:41:01.683722808 +0200
+@@ -3,8 +3,10 @@
+ use Config;
+ 
+ &read_makefile;
++$startperl = $Config{'startperl'};
+ $fullperl = resolve_make_var('FULLPERL') || $Config{'perlpath'};
+ $islib = resolve_make_var('INSTALLSITELIB');
++$startperl ||= "#!$fullperl";
+ 
+ $name = $0;
+ $name =~ s~^.*/~~;
+@@ -16,15 +18,15 @@
+ print "writing $name\n";
+ 
+ while (<DATA>) {
+-  if (m~^\#!/.*/perl.*$~o) {
++  if (m{^\#!/.*/perl.*$}o) {
+     # This substitutes the path perl was installed at on this system
+     # _and_ removed any (-w) options.
+-    print OUT "#!",$fullperl,$1,"\n";
++    print OUT $startperl, "\n";
+     next;
+   }
+   if (/^use lib/o) {
+     # This substitutes the actuall library install path
+-    print OUT "use lib '$islib';\n";
++#   print OUT "use lib '$islib';\n";
+     next;
+   }
+   print OUT;
+--- w3mir-1.0.10/w3mfix.PL	2001-02-04 22:21:47.000000000 +0100
++++ w3mir-1.0.10/w3mfix.PL	2004-08-21 13:45:44.819679600 +0200
+@@ -3,8 +3,10 @@
+ use Config;
+ 
+ &read_makefile;
++$startperl = $Config{'startperl'};
+ $fullperl = resolve_make_var('FULLPERL') || $Config{'perlpath'};
+ $islib = resolve_make_var('INSTALLSITELIB');
++$startperl ||= "#!$fullperl";
+ 
+ $name = $0;
+ $name =~ s~^.*/~~;
+@@ -16,15 +18,15 @@
+ print "writing $name\n";
+ 
+ while (<DATA>) {
+-  if (m~^\#!/.*/perl.*$~o) {
++  if (m{^\#!/.*/perl.*$}o) {
+     # This substitutes the path perl was installed at on this system
+     # _and_ removed any (-w) options.
+-    print OUT "#!",$fullperl,$1,"\n";
++    print OUT $startperl, "\n";
+     next;
+   }
+   if (/^use lib/o) {
+     # This substitutes the actuall library install path
+-    print OUT "use lib '$islib';\n";
++#   print OUT "use lib '$islib';\n";
+     next;
+   }
+   print OUT;
