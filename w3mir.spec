@@ -36,7 +36,7 @@ and Adobe Acrobat (PDF) files.
 %build
 perl Makefile.PL
 patch -p1 < $RPM_SOURCE_DIR/Makefile.patch
-make
+%{__make}
 
 %install
 if [ -d $RPM_BUILD_ROOT ]; then rm -rf $RPM_BUILD_ROOT; fi
