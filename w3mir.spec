@@ -8,7 +8,7 @@ Source:         %{name}-%{version}.tar.gz
 Patch:		Makefile.patch
 URL:		http://www.math.uio.no/~janl/w3mir/
 Copyright:	Artistic
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	perl-MIME-Base64, perl-libwww
 
 %description
