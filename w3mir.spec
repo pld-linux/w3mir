@@ -6,8 +6,6 @@ Version:	1.0.8
 Release:	2
 License:	Artistic
 Group:		Applications/Networking
-Group(de):	Applikationen/Netzwerkwesen
-Group(pl):	Aplikacje/Sieciowe
 Vendor:		<janl@math.uio.no>
 Source0:	http://langfeldt.net/w3mir/%{name}-%{version}.tar.gz
 Patch0:		Makefile.patch
