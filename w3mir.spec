@@ -2,16 +2,16 @@
 Summary:	A command-line client to download WWW documents
 Summary(pl):	Klient command-line do ¶ci±gania serwisów WWW
 Name:		w3mir
-Version:	1.0.8
-Release:	2
+Version:	1.0.10
+Release:	1
 License:	Artistic
 Group:		Applications/Networking
 Vendor:		<janl@math.uio.no>
 Source0:	http://langfeldt.net/w3mir/%{name}-%{version}.tar.gz
-Patch0:		Makefile.patch
 URL:		http://langfeldt.net/w3mir/
+BuildRequires:	perl-libwww
+BuildRequires:	rpm-perlprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Requires:	perl-MIME-Base64, perl-libwww
 
 %description
 W3mir is a all purpose WWW copying and mirroring program. Its main
@@ -45,28 +45,27 @@ CSS, Javy, ActiveX i PDF.
 
 %build
 perl Makefile.PL
-patch -p1 < %{PATCH0}
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_libdir}/perl5/{site_perl/i386-linux/auto/w3mir,i386-linux/5.00404} \
-	$RPM_BUILD_ROOT{%{_mandir}/man1,%{_bindir}}
-%{__make} install PREFIX=$RPM_BUILD_ROOT%{_prefix}
 
-gzip -9nf Artistic Changes README
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+gzip -9nf Changes README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Artistic.gz Changes.gz README.gz example.cfg multiscope.cfg w3mir-HOWTO.html
-%{_libdir}/perl5/site_perl/w3http.pm
-%{_libdir}/perl5/site_perl/w3pdfuri.pm
-%{_libdir}/perl5/site_perl/htmlop.pm
-%{_mandir}/man1/w3mir.1
-%{_mandir}/man1/w3mfix.1
+%doc Changes.gz README.gz example.cfg multiscope.cfg w3mir-HOWTO.html
+%{perl_sitelib}/w3http.pm
+%{perl_sitelib}/w3pdfuri.pm
+%{perl_sitelib}/htmlop.pm
+%{_mandir}/man1/w3mir.1*
+%{_mandir}/man1/w3mfix.1*
 %attr(755,root,root) %{_bindir}/w3mir
 %attr(755,root,root) %{_bindir}/w3mfix
-%{_libdir}/perl5/site_perl/i386-linux/auto/w3mir/.packlist
