@@ -45,7 +45,7 @@ mkdir -p $RPM_BUILD_ROOT/usr/man/man1
 mkdir -p $RPM_BUILD_ROOT/usr/bin
 mkdir -p $RPM_BUILD_ROOT/usr/lib/perl5/site_perl/i386-linux/auto/w3mir
 mkdir -p $RPM_BUILD_ROOT/usr/lib/perl5/i386-linux/5.00404
-make install PREFIX=$RPM_BUILD_ROOT/usr
+%{__make} install PREFIX=$RPM_BUILD_ROOT/usr
 
 %clean
 rm -rf $RPM_BUILD_ROOT
