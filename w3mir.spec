@@ -2,7 +2,7 @@
 Summary:	A command-line client to download WWW documents.
 Name:		w3mir
 Version:	1.0.8
-Release:	1
+Release:	2
 Group:		Applications/Networking
 Vendor:		<janl@math.uio.no>
 Source:         %{name}-%{version}.tar.gz
