@@ -1,16 +1,17 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	A command-line client to download WWW documents
-Summary(pl):	Program do ¶ci±gania serwisów WWW uruchamiany z linii komend
+Summary(pl):	Program do ¶ci±gania serwisów WWW uruchamiany z linii poleceñ
 Name:		w3mir
 Version:	1.0.10
 Release:	2
 License:	Artistic
-Group:		Applications/Networking
 Vendor:		<janl@math.uio.no>
+Group:		Applications/Networking
 Source0:	http://langfeldt.net/w3mir/%{name}-%{version}.tar.gz
 URL:		http://langfeldt.net/w3mir/
+BuildRequires:	perl-devel >= 5.8.0
 BuildRequires:	perl-libwww
-BuildRequires:	rpm-perlprov
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
