@@ -3,7 +3,7 @@ Summary:	A command-line client to download WWW documents
 Summary(pl):	Klient command-line do ¶ci±gania serwisów WWW
 Name:		w3mir
 Version:	1.0.10
-Release:	1
+Release:	2
 License:	Artistic
 Group:		Applications/Networking
 Vendor:		<janl@math.uio.no>
@@ -44,8 +44,8 @@ CSS, Javy, ActiveX i PDF.
 %setup -q
 
 %build
-perl Makefile.PL
-
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
 %{__make}
 
 %install
@@ -60,9 +60,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README example.cfg multiscope.cfg w3mir-HOWTO.html
-%{perl_sitelib}/w3http.pm
-%{perl_sitelib}/w3pdfuri.pm
-%{perl_sitelib}/htmlop.pm
+%{perl_vendorlib}/w3http.pm
+%{perl_vendorlib}/w3pdfuri.pm
+%{perl_vendorlib}/htmlop.pm
 %{_mandir}/man1/w3mir.1*
 %{_mandir}/man1/w3mfix.1*
 %attr(755,root,root) %{_bindir}/w3mir
