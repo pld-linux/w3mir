@@ -1,18 +1,14 @@
-%define name w3mir
-%define version 1.0.3
-%define release 1
-%define builddir $RPM_BUILD_DIR/%{name}-%{version}
-Name:		%{name}
-Version:	%{version}
+Summary:	A command-line client to download WWW documents.
+Name:		w3mir
+Version:	1.0.8
 Release:	1
+Group:		Applications/Networking
 Vendor:		<janl@math.uio.no>
 Source:         %{name}-%{version}.tar.gz
 Patch:		Makefile.patch
 URL:		http://www.math.uio.no/~janl/w3mir/
-Group:		Applications/Networking
 Copyright:	Artistic
-Summary:	A command-line client to download WWW documents.
-BuildRoot:	/var/tmp/w3mir-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 Requires:	perl-MIME-Base64, perl-libwww
 
 %description
@@ -35,7 +31,7 @@ W3mir supports HTML4, and has partial support for CSS, Java, ActiveX
 and Adobe Acrobat (PDF) files.
 
 %prep
-%setup -n w3mir-1.0.3
+%setup
 
 %build
 perl Makefile.PL
