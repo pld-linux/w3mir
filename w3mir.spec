@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	A command-line client to download WWW documents
-Summary(pl):	Program do ¶ci±gania serwisów WWW uruchamiany z linii poleceñ
+Summary(pl.UTF-8):   Program do Å›ciÄ…gania serwisÃ³w WWW uruchamiany z linii poleceÅ„
 Name:		w3mir
 Version:	1.0.10
 Release:	5
@@ -36,12 +36,12 @@ you like. They don't even have to be related.
 W3mir supports HTML4, and has partial support for CSS, Java, ActiveX
 and Adobe Acrobat (PDF) files.
 
-%description -l pl
-W3mir jest programem do kopiowania i mirrorowania WWW. G³ównym celem
-jest kopiowanie kompletnych struktur katalogów, aby by³y mo¿liwe do
-przegl±dania przez serwer WWW albo bezpo¶rednio z dysku lub CD-ROM-u.
-W tym celu W3mir mo¿e poprawiaæ URL-e. Oprócz tego potrafi ¶ci±gaæ
-pojedyncze dokumenty itp. W3mir obs³uguje HTML4 i ma czê¶ciow± obs³ugê
+%description -l pl.UTF-8
+W3mir jest programem do kopiowania i mirrorowania WWW. GÅ‚Ã³wnym celem
+jest kopiowanie kompletnych struktur katalogÃ³w, aby byÅ‚y moÅ¼liwe do
+przeglÄ…dania przez serwer WWW albo bezpoÅ›rednio z dysku lub CD-ROM-u.
+W tym celu W3mir moÅ¼e poprawiaÄ‡ URL-e. OprÃ³cz tego potrafi Å›ciÄ…gaÄ‡
+pojedyncze dokumenty itp. W3mir obsÅ‚uguje HTML4 i ma czÄ™Å›ciowÄ… obsÅ‚ugÄ™
 CSS, Javy, ActiveX i PDF.
 
 %prep
